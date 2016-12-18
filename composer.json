@@ -1,0 +1,17 @@
+{
+    "name": "root/pt3o-fusion",
+    "require-dev": {
+    },
+    "authors": [
+        {
+            "name": "Andriy Doroshenko",
+            "email": "anddorua@yandex.ru"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.2"
+    },
+    "config": {
+        "vendor-dir": "vendor"
+    }
+}
