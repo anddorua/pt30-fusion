@@ -8,7 +8,7 @@
 
 require_once (__DIR__ . '/vendor/autoload.php');
 
-$template_file_name = 'simple.odt';
+$template_file_name = 'fusion2pdf.odt';
 $body = fopen('templates/' . $template_file_name, 'r');
 
 $client = new GuzzleHttp\Client();
@@ -20,7 +20,15 @@ $res = $client->request('POST', 'http://localhost:8765/form', [
         ],
         [
             'name' => 'datadict',
-            'contents' => '{}',
+            'contents' => json_encode([
+                'document' => [
+                    'person_name' => 'Aide',
+                    'person_surname' => 'Florent',
+                    'person_company' => 'XCG Consulting',
+                    'person_url' => 'http://www.xcg-consulting.fr'
+                ],
+
+            ]),
         ],
         [
             'name' => 'image_mapping',
